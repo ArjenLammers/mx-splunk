@@ -1,0 +1,10 @@
+/Splunk.mpr.lock
+/Splunk_main.launch
+/deployment
+/GPUCache
+/releases
+/.classpath
+/.project
+/Splunk.mpr.bak
+/.svn
+/.mendix-cache
