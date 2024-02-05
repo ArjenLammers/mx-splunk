@@ -10,9 +10,30 @@ public class Constants
 {
 	// These are the constants for the Splunk module
 
+	public static boolean getEnabled()
+	{
+		return (java.lang.Boolean)Core.getConfiguration().getConstantValue("Splunk.Enabled");
+	}
+
 	public static java.lang.String getEndpoint()
 	{
 		return (java.lang.String)Core.getConfiguration().getConstantValue("Splunk.Endpoint");
+	}
+
+	/**
+	* See https://docs.splunk.com/DocumentationStatic/JavaLogging/1.6.2/com/splunk/logging/HttpEventCollectorSender.html#DefaultBatchCount
+	*/
+	public static java.lang.Long getMaxEventsBatchCount()
+	{
+		return (java.lang.Long)Core.getConfiguration().getConstantValue("Splunk.MaxEventsBatchCount");
+	}
+
+	/**
+	* See https://docs.splunk.com/DocumentationStatic/JavaLogging/1.6.2/com/splunk/logging/HttpEventCollectorSender.html#DefaultBatchSize
+	*/
+	public static java.lang.Long getMaxEventsBatchSize()
+	{
+		return (java.lang.Long)Core.getConfiguration().getConstantValue("Splunk.MaxEventsBatchSize");
 	}
 
 	/**

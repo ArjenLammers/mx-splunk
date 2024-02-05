@@ -73,8 +73,8 @@ public class SplunkLogSubscriber extends LogSubscriber {
 				channel, // channel
 				type, // type
 				0L, // delay
-				0L, // maxEventsBatchCount
-				0L, // maxEventsBatchSize
+				Constants.getMaxEventsBatchCount(), // maxEventsBatchCount
+				Constants.getMaxEventsBatchSize(), // maxEventsBatchSize
 				"sequential",
 				metadata,
 				timeoutSettings
