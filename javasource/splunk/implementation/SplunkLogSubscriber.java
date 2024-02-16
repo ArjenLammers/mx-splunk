@@ -66,7 +66,6 @@ public class SplunkLogSubscriber extends LogSubscriber {
 		
 		String channel = null, type = null;
 		HttpEventCollectorSender.TimeoutSettings timeoutSettings = new HttpEventCollectorSender.TimeoutSettings();
-
 		hecSender = new HttpEventCollectorSender(
 				Constants.getEndpoint(),
 				Constants.getToken(),
@@ -100,7 +99,7 @@ public class SplunkLogSubscriber extends LogSubscriber {
 			hecSender.send(
 					msg.timestamp,
 					msg.level.name().toLowerCase(), // severity
-					msg.message.toString(), // message
+					msg.message != null ? msg.message.toString() : "null", // message
 					msg.node.name(), // logger name
 					null, // thread name
 					null, // properties
